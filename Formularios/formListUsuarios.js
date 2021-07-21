@@ -12,23 +12,23 @@ import { gql, useMutation } from '@apollo/client';
 
 
 
-export default function formUsusariosR(props, navigation) {
+export default function formListUsuarios(props, navigation) {
 
     const [hidePassword, setHidePassword] = useState(false)
 
     const [categoria, setCategoria] = useState('')
     const [inputCategoria, guardarCategoria] = useState('')
 
-    const crearCategoria = ()=>{
+    const crearCategoria = () => {
         props.navigation.navigate('Usuarios')
     }
 
-    const cerrarLista = ()=>{
+    const cerrarLista = () => {
         props.navigation.navigate('Home')
     }
 
-    const DetalleLista = (suc)=>{
-        props.navigation.navigate('DetalleSucursal',{suc:suc})
+    const DetalleLista = (suc) => {
+        props.navigation.navigate('DetalleUsuarios', { suc: suc })
     }
 
 
@@ -46,9 +46,21 @@ export default function formUsusariosR(props, navigation) {
                 <Text style={mainStyles.titleDetalleLista1}> Usuarios Registrados</Text>
 
                 <Text style={mainStyles.titleDetalleLista}> Administradores</Text>
+                <View >
+
+                    <TouchableOpacity onPress={() => DetalleLista("Admin1")}>
+                        <Text style={mainStyles.titleLista}>Admin1</Text>
+                    </TouchableOpacity>
+                </View>
 
                 <Text style={mainStyles.titleDetalleLista}> Colaboradores</Text>
-                
+                <View >
+
+                    <TouchableOpacity onPress={() => DetalleLista("Colab1")}>
+                        <Text style={mainStyles.titleLista}>Colab1</Text>
+                    </TouchableOpacity>
+                </View>
+
 
                 <View style={mainStyles.btnMain}>
 

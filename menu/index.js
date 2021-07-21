@@ -27,20 +27,26 @@ import ListSucursal from '@Formularios/formListaSucursal';
 import DetalleSucursal from '@Formularios/formDetalleSucursal';
 
 
+//Ventanas Usuarios 
+import Usuarios from '@Formularios/formUsuarios';
+import ListUsuarios from '@Formularios/formListUsuarios';
+import DetalleUsuarios from '@Formularios/formDetalleUsuario';
+
+//
 
 import NewProducto from '@Formularios/fromNewProduc';
 
-import Usuarios from '@Formularios/formUsuarios';
+
 
 
 import ListProducstos from '@Formularios/formListProductos';
-import ListUsuarios from '@Formularios/formUsuariosR';
+
 
 import NewRegion from '@Formularios/formRegion';
 import ListRegion from '@Formularios/formListaRegion';
 import DetalleRegion from '@Formularios/formDetalleRegion';
 import AccesoCamara from '@Formularios/AccesoCam';
-import DetalleUsuarios from '@Formularios/DetalleUsuarios';
+
 import ContenidoProductos from '@Formularios/ContenidoProductos';
 import Almacen from '@Formularios/Almacen';
 import AlmacenSucursales from '@Formularios/AlmacenSucursales';
@@ -119,12 +125,12 @@ function Menu(props) {
             <DrawerMenu iconName='hail' titleName='Provedores' navigation={() => props.navigation.navigate('ListProvedores')} />
             <DrawerMenu iconName='storefront' titleName='Categorias' navigation={() => props.navigation.navigate('ListCategorias')} />
             <DrawerMenu iconName='storefront' titleName='Sucursales' navigation={() => props.navigation.navigate('ListSucursal')} />
+            <DrawerMenu iconName='storefront' titleName='Usuarios' navigation={() => props.navigation.navigate('ListUsuarios')} />
 
-            
 
             <DrawerMenu iconName='book-plus-multiple' titleName='Productos' navigation={() => props.navigation.navigate('ListProducstos')} />
            
-            <DrawerMenu iconName='storefront' titleName='Usuarios' navigation={() => props.navigation.navigate('ListUsuarios')} />
+            
             
             <DrawerMenu iconName='storefront' titleName='Regiones' navigation={() => props.navigation.navigate('ListRegion')} />
             <DrawerMenu iconName='storefront' titleName='Camara' navigation={() => props.navigation.navigate('AccesoCamara')} />

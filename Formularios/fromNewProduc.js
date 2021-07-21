@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Text, View, TouchableOpacity, StatusBar, ScrollView, Image } from 'react-native'
-import { mainStyles, loginStyles } from '@styles/styles'
+import { mainStyles, loginStyles, } from '@styles/styles'
 import MyTextInput from '@components/MyTextInput'
 import color from '@styles/colors'
 import { Picker } from '@react-native-community/picker';
@@ -46,7 +46,7 @@ export default function formProvedores(props) {
       <StatusBar backgroundColor={color.BLUE} translucent={true} />
 
       <View style={[mainStyles.container, { padding: 50 }]}>
-        <Text style={mainStyles.titleText}> Producto</Text>
+        <Text style={mainStyles.titleDetalleLista1}> Nuevo Producto</Text>
 
         <View>
           <Text style={{ fontWeight: 'bold', fontSize: 18, marginTop: 20 }}>Categoria</Text>

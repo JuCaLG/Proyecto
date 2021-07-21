@@ -3,8 +3,8 @@ import { Text, View, TouchableOpacity, StatusBar, ScrollView } from 'react-nativ
 import { mainStyles } from '@styles/styles'
 import MyTextInput from '@components/MyTextInput'
 import color from '@styles/colors'
-
 import { gql, useMutation } from '@apollo/client';
+import { Picker } from '@react-native-community/picker';
 
 
 
@@ -16,15 +16,6 @@ function goToScreen(props, routeName) {
 
 
 export default function formPrueba(props, navigation) {
-
-
-
-    const NUEVO_USUARIO = gql`
-  
-    mutation nuevoUsuario($input: UsuarioInput){
-    nuevoUsuario(input: $input)
-    }
-    `;
 
     const [hidePassword, setHidePassword] = useState(false)
 
@@ -46,12 +37,13 @@ export default function formPrueba(props, navigation) {
     const [passwordc, setPasswordC] = useState('')
     const [inputPasswordC, guardarPasswordC] = useState('')
 
-    const [nuevoUsuario] = useMutation(NUEVO_USUARIO);
+    const [selectedValue, setSelectedValue] = useState("--- Asignar rol ---")
 
 
 
 
-    const crearUsuario = async () => {
+
+    const crearUsuario = () => {
 
 
 
@@ -61,41 +53,12 @@ export default function formPrueba(props, navigation) {
         } else if (inputPassword != inputPasswordC) {
             alert("No coincide la contraseña")
         } else {
-            
-            try{
-                const {data} = await nuevoUsuario ({
-                    variables: {
-                        input: {
-                            inputNombre,
-                            inputEmail,
-                            inputPassword,
-                            inputPassword,                            
-                            inputTelefono,
-                            inputNombre                          
-                        }
-                    }
-                });
-                console.log(data);
-
-
-                alert("Usuario registrado")
-                guardarNombre('')
-                guardarEmail('')
-                guardarTelefono('')
-                guardarPassword('')
-                guardarPasswordC('')
-    
-                console.log(inputNombre),
-                    console.log(inputEmail),
-                    console.log(inputPassword),
-                    console.log(inputTelefono)
-
-            }catch(error){
-                console.log(error)
-
-            }
-          
-               
+            alert("Usuario registrado")
+            guardarNombre('')
+            guardarEmail('')
+            guardarTelefono('')
+            guardarPassword('')
+            guardarPasswordC('')
         }
         //UseMutation
         //const[] = useMutation();
@@ -136,6 +99,18 @@ export default function formPrueba(props, navigation) {
 
                 <MyTextInput placeholder='Confirmar Password' image='slack'
                     value={inputPasswordC} onChangeText={passwordc => guardarPasswordC(passwordc)} />
+                <View>
+                    <Text style={{ fontWeight: 'bold', fontSize: 22, marginTop: 20 }}>       Rol de Usuario         </Text>
+                    <Picker
+                        selectedValue={selectedValue}
+                        style={{ height: 50, width: 300 }}
+                        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                    >
+                        <Picker.Item label="Administrador" value="Administrador" />
+                        <Picker.Item label="Coordinador" value="Coordinador" />
+                        <Picker.Item label="Colaborador" value="Colaborador" />
+                    </Picker>
+                </View>
 
 
 

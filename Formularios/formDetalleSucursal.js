@@ -29,9 +29,6 @@ export default function formListaSucursal(props, navigation) {
         props.navigation.navigate('ListSucursal')
     }
 
-    const DetalleLista = (suc)=>{
-        props.navigation.navigate('DetalleCategoria',{suc:suc})
-    }
 
     
 
