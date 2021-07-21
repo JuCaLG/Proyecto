@@ -44,8 +44,8 @@ export default function formListaSucursal(props, navigation) {
             style={{ backgroundColor: color.WHITE }}>
             <StatusBar backgroundColor={color.BLUE} translucent={true} />
 
-            <View style={[mainStyles.container, { padding: 50 }]}>
-                <Text style={mainStyles.titleDetalleLista}> Productos de</Text>
+            <View style={[mainStyles.container, { padding: 20 }]}>
+                <Text style={mainStyles.titleDetalleLista}> Productos de </Text>
                 <Text style={mainStyles.titleDetalleSuc}> {suc}</Text>
 
                

@@ -42,8 +42,8 @@ export default function formUsusariosR(props, navigation) {
             style={{ backgroundColor: color.WHITE }}>
             <StatusBar backgroundColor={color.BLUE} translucent={true} />
 
-            <View style={[mainStyles.container, { padding: 70 }]}>
-                <Text style={mainStyles.titleText}> Usuarios Registrados</Text>
+            <View style={[mainStyles.container, { padding: 40 }]}>
+                <Text style={mainStyles.titleDetalleLista1}> Usuarios Registrados</Text>
 
                 <Text style={mainStyles.titleDetalleLista}> Administradores</Text>
 

@@ -26,7 +26,7 @@ export default function formDetalleSucursal(props, navigation) {
     }
    
     const atrasLista = ()=>{
-        props.navigation.navigate('ListRegion')
+        props.navigation.navigate('ContenidoProductos')
     }
 
     const DetalleLista = (suc)=>{

@@ -18,6 +18,7 @@ export default function ContenidoProductos(props, navigation) {
 
     const [categoria, setCategoria] = useState('')
     const [inputCategoria, guardarCategoria] = useState('')
+
     const{cat}=props.route.params;
     console.log(props.route.params.cat)
 
@@ -26,7 +27,7 @@ export default function ContenidoProductos(props, navigation) {
     }
    
     const atrasLista = ()=>{
-        props.navigation.navigate('ListProductos')
+        props.navigation.navigate('ListProducstos')
     }
 
     const DetalleLista = (suc)=>{
@@ -51,8 +52,8 @@ export default function ContenidoProductos(props, navigation) {
             <StatusBar backgroundColor={color.BLUE} translucent={true} />
 
             <View style={[mainStyles.container, { padding: 50 }]}>
-                <Text style={mainStyles.titleDetalleLista}> Productos de</Text>
-                <Text style={mainStyles.titleDetalleSuc}> {cat}</Text>
+                <Text style={mainStyles.titleDetalleLista}> Detalles de </Text>
+                <Text style={mainStyles.titleDetalleSuc}> {"prod11"}</Text>
 
                
 

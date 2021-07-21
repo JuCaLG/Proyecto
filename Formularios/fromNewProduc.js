@@ -23,7 +23,7 @@ const crearNewProductto = ()=>{
 
 }
 
-const cerrarProducto =() => {
+const cerrarProducto =(props,navigation) => {
   props.navigation.navigate('Home')
 
 }
@@ -84,7 +84,7 @@ export default function formProvedores(props) {
 
 
         <View style={mainStyles.btnMain}>
-          <TouchableOpacity >
+          <TouchableOpacity onPress= {()=> crearNewProductto()} >
             <Text style={mainStyles.btntxt}>Agregar</Text>
           </TouchableOpacity>
         </View>

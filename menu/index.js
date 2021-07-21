@@ -10,18 +10,32 @@ import s from './style';
 
 
 
-
-import Categorias from '@Formularios/formCategorias';
+//Ventanas Proveedores
 import Provedores from '@Formularios/formProvedores';
-import NewProducto from '@Formularios/fromNewProduc';
-import Sucursales from '@Formularios/fromSucursales';
-import Usuarios from '@Formularios/formUsuarios';
+import ListProvedores from '@Formularios/formListadoProveedores';
+import DetalleProveedor from '@Formularios/formDetalleProveedor';
+
+//Ventanas Categorias
+import Categorias from '@Formularios/formCategorias';
 import ListCategorias from '@Formularios/formListCategoria';
+import DetalleCategoria from '@Formularios/formDetalleCategoria';
+
+
+//Ventanas Sucursales
+import Sucursales from '@Formularios/fromSucursales';
 import ListSucursal from '@Formularios/formListaSucursal';
 import DetalleSucursal from '@Formularios/formDetalleSucursal';
+
+
+
+import NewProducto from '@Formularios/fromNewProduc';
+
+import Usuarios from '@Formularios/formUsuarios';
+
+
 import ListProducstos from '@Formularios/formListProductos';
 import ListUsuarios from '@Formularios/formUsuariosR';
-import DetalleCategoria from '@Formularios/formDetalleCategoria';
+
 import NewRegion from '@Formularios/formRegion';
 import ListRegion from '@Formularios/formListaRegion';
 import DetalleRegion from '@Formularios/formDetalleRegion';
@@ -31,6 +45,9 @@ import ContenidoProductos from '@Formularios/ContenidoProductos';
 import Almacen from '@Formularios/Almacen';
 import AlmacenSucursales from '@Formularios/AlmacenSucursales';
 import AlmacenIndividual from '@Formularios/AlmacenIndividual';
+import AgregarInventario from '@Formularios/FromAgregarProducto';
+import formDetalleProd from '@Formularios/formDetalleProd';
+
 
 //import  formSurtido from '@Formularios/formSurtido';
 
@@ -99,11 +116,16 @@ function Menu(props) {
             </View>
             <DrawerMenu iconName='podium' titleName='Home' navigation={() => props.navigation.navigate('Home')} />
 
-            <DrawerMenu iconName='hail' titleName='Provedores' navigation={() => props.navigation.navigate('Provedores')} />
-            <DrawerMenu iconName='book-plus-multiple' titleName='Productos' navigation={() => props.navigation.navigate('ListProducstos')} />
-            <DrawerMenu iconName='storefront' titleName='Sucursales' navigation={() => props.navigation.navigate('ListSucursal')} />
-            <DrawerMenu iconName='storefront' titleName='Usuarios' navigation={() => props.navigation.navigate('ListUsuarios')} />
+            <DrawerMenu iconName='hail' titleName='Provedores' navigation={() => props.navigation.navigate('ListProvedores')} />
             <DrawerMenu iconName='storefront' titleName='Categorias' navigation={() => props.navigation.navigate('ListCategorias')} />
+            <DrawerMenu iconName='storefront' titleName='Sucursales' navigation={() => props.navigation.navigate('ListSucursal')} />
+
+            
+
+            <DrawerMenu iconName='book-plus-multiple' titleName='Productos' navigation={() => props.navigation.navigate('ListProducstos')} />
+           
+            <DrawerMenu iconName='storefront' titleName='Usuarios' navigation={() => props.navigation.navigate('ListUsuarios')} />
+            
             <DrawerMenu iconName='storefront' titleName='Regiones' navigation={() => props.navigation.navigate('ListRegion')} />
             <DrawerMenu iconName='storefront' titleName='Camara' navigation={() => props.navigation.navigate('AccesoCamara')} />
             <DrawerMenu iconName='storefront' titleName='Almacen' navigation={() => props.navigation.navigate('Almacen')} />
@@ -127,9 +149,20 @@ export default function MyDrawer() {
 
         <NavigationContainer>
             <Drawer.Navigator drawerContent={(props) => <Menu{...props} />}>
+                
+
                 <Drawer.Screen name="Home" component={HomeScreen} />
-                <Drawer.Screen name="Categorias" component={Categorias} />
+
                 <Drawer.Screen name="Provedores" component={Provedores} />
+                <Drawer.Screen name="ListProvedores" component={ListProvedores} />
+                <Drawer.Screen name="DetalleProveedor" component={DetalleProveedor} />
+
+                
+
+
+
+                <Drawer.Screen name="Categorias" component={Categorias} />
+            
                 <Drawer.Screen name="NewProduc" component={NewProducto} />
                 <Drawer.Screen name="Sucursal" component={Sucursales} />
                 <Drawer.Screen name="Usuarios" component={Usuarios} />
@@ -149,6 +182,16 @@ export default function MyDrawer() {
                 <Drawer.Screen name="Almacen" component={Almacen} />
                 <Drawer.Screen name="AlmacenSucursales" component={AlmacenSucursales} />
                 <Drawer.Screen name="AlmacenIndividual" component={AlmacenIndividual} />
+                <Drawer.Screen name="AgregarInventario" component={AgregarInventario} />
+                <Drawer.Screen name="formDetalleProd" component={formDetalleProd} />
+            
+
+                
+
+
+                
+
+                
             </Drawer.Navigator>
         </NavigationContainer>
 

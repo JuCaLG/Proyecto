@@ -23,9 +23,16 @@ const mainStyles = StyleSheet.create({
         fontFamily: "Poppins-SemiBold"
     },
     titleDetalleLista: {
-        fontSize: 28,
+        fontSize: 20,
         marginTop: 20,
         color: color.GRAY,
+        fontFamily: "Poppins-SemiBold"
+    },
+    titleDetalleLista1: {
+        fontSize: 26,
+        marginLeft: 1,
+        marginTop: 1,
+        color: color.BLUE1,
         fontFamily: "Poppins-SemiBold"
     },
     titleDetalleSuc: {
@@ -34,7 +41,7 @@ const mainStyles = StyleSheet.create({
         fontFamily: "Poppins-SemiBold"
     },
     titleLista: {
-        fontSize: 25,
+        fontSize: 20,
         textAlign: 'center',
         fontFamily: "Poppins-SemiBold",
         color: color.BLACKSECONDARY,

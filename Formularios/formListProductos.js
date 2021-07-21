@@ -28,7 +28,7 @@ export default function formListProducstos(props, navigation) {
     }
 
     const DetalleLista = (suc) => {
-        props.navigation.navigate('DetalleSucursal', { suc: suc })
+        props.navigation.navigate('ContenidoProductos', { suc: suc })
     }
 
 
@@ -45,6 +45,13 @@ export default function formListProducstos(props, navigation) {
             <View style={[mainStyles.container, { padding: 50 }]}>
                 <Text style={mainStyles.titleText}> Productos</Text>
 
+                <View >
+
+                    <TouchableOpacity onPress={() => DetalleLista("Prod11")}>
+                        <Text style={mainStyles.titleLista}>Prod11</Text>
+                    </TouchableOpacity>
+                </View>
+
 
 
                 <View style={mainStyles.btnMain}>
@@ -57,7 +64,7 @@ export default function formListProducstos(props, navigation) {
                 <View style={mainStyles.btnMas} >
 
                     <TouchableOpacity onPress={() => crearCategoria()}>
-                        <Text style={mainStyles.btntxt}>+</Text>
+                        <Text style={mainStyles.btntxt}>Nuevo</Text>
                     </TouchableOpacity>
                 </View>
 
