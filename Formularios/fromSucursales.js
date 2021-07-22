@@ -4,6 +4,7 @@ import { mainStyles,loginStyles} from '@styles/styles'
 import MyTextInput from '@components/MyTextInput'
 import color from '@styles/colors'
 import {gql,useMutation} from '@apollo/client';
+import { Picker } from '@react-native-community/picker';
 
 
 
@@ -44,6 +45,8 @@ export default function formSucursales(props) {
   //const [email, setEmail] = useState('')
 
   const[email,guardarEmail]= useState('')
+
+  const [selectedValue1, setSelectedValue1] = useState("--- Asignar rol ---")
 
 
 
@@ -117,6 +120,16 @@ return (
 
     <View style={[mainStyles.container, { padding: 50 }]}>
       <Text style={mainStyles.titleText}>Sucursales</Text>
+
+      <Picker
+            selectedValue={selectedValue1}
+            style={{ height: 50, width: 300 }}
+            onValueChange={(itemValue1, itemIndex1) => setSelectedValue1(itemValue1)}
+          >
+            <Picker.Item label="Region Centro " value="Region Centro" />
+            <Picker.Item label="Región Norte" value="Región Norte" />
+           
+          </Picker>
   
       <MyTextInput placeholder='Nombre' image='user'
       value={nombre} onChangeText={texto => guardarNombre (texto)} />

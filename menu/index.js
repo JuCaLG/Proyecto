@@ -32,27 +32,25 @@ import Usuarios from '@Formularios/formUsuarios';
 import ListUsuarios from '@Formularios/formListUsuarios';
 import DetalleUsuarios from '@Formularios/formDetalleUsuario';
 
-//
-
+//Ventanas Productos
 import NewProducto from '@Formularios/fromNewProduc';
-
-
-
-
 import ListProducstos from '@Formularios/formListProductos';
+import formDetalleProd from '@Formularios/formDetalleProd';
+import ContenidoProductos from '@Formularios/ContenidoProductos';
 
 
+//Ventanas Regiones
 import NewRegion from '@Formularios/formRegion';
 import ListRegion from '@Formularios/formListaRegion';
 import DetalleRegion from '@Formularios/formDetalleRegion';
-import AccesoCamara from '@Formularios/AccesoCam';
 
-import ContenidoProductos from '@Formularios/ContenidoProductos';
+
+//Ventanas Almacenes
 import Almacen from '@Formularios/Almacen';
 import AlmacenSucursales from '@Formularios/AlmacenSucursales';
 import AlmacenIndividual from '@Formularios/AlmacenIndividual';
 import AgregarInventario from '@Formularios/FromAgregarProducto';
-import formDetalleProd from '@Formularios/formDetalleProd';
+
 
 
 //import  formSurtido from '@Formularios/formSurtido';
@@ -77,11 +75,9 @@ function HomeScreen(props) {
 
 
 
-    <View style={{
-        flex: 1, alignItems: 'center',
-        justifyContent: 'center'
-    }}>
-        <Text style={{ fontSize: 20 }}>HomeScreen</Text>
+    <View style={{flex: 1, alignItems: 'center',justifyContent: 'center'}}>
+
+        <Text style={{ fontSize: 20 }}>Estadísticas de Ventas</Text>
     </View>
     );
 }
@@ -133,7 +129,7 @@ function Menu(props) {
             
             
             <DrawerMenu iconName='storefront' titleName='Regiones' navigation={() => props.navigation.navigate('ListRegion')} />
-            <DrawerMenu iconName='storefront' titleName='Camara' navigation={() => props.navigation.navigate('AccesoCamara')} />
+            
             <DrawerMenu iconName='storefront' titleName='Almacen' navigation={() => props.navigation.navigate('Almacen')} />
             <DrawerMenu iconName='storefront' titleName='Almacen por Sucursal' navigation={() => props.navigation.navigate('AlmacenSucursales')} />
 
@@ -181,7 +177,7 @@ export default function MyDrawer() {
                 <Drawer.Screen name="NewRegion" component={NewRegion} />
                 <Drawer.Screen name="ListRegion" component={ListRegion} />
                 <Drawer.Screen name="DetalleRegion" component={DetalleRegion} />
-                <Drawer.Screen name="AccesoCamara" component={AccesoCamara} />
+       
                 <Drawer.Screen name="DetalleUsuarios" component={DetalleUsuarios} />
 
                 <Drawer.Screen name="ContenidoProductos" component={ContenidoProductos} />

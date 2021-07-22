@@ -38,6 +38,7 @@ export default function formPrueba(props, navigation) {
     const [inputPasswordC, guardarPasswordC] = useState('')
 
     const [selectedValue, setSelectedValue] = useState("--- Asignar rol ---")
+    const [selectedValue1, setSelectedValue1] = useState("--- Asignar rol ---")
 
 
 
@@ -109,6 +110,22 @@ export default function formPrueba(props, navigation) {
                         <Picker.Item label="Administrador" value="Administrador" />
                         <Picker.Item label="Coordinador" value="Coordinador" />
                         <Picker.Item label="Colaborador" value="Colaborador" />
+                    </Picker>
+                </View>
+
+
+                <View>
+
+                    <Text style={{ fontWeight: 'bold', fontSize: 22, marginTop: 20 }}>       Sucursal         </Text>
+
+                    <Picker
+                        selectedValue={selectedValue1}
+                        style={{ height: 50, width: 300 }}
+                        onValueChange={(itemValue1, itemIndex1) => setSelectedValue1(itemValue1)}
+                    >
+                        <Picker.Item label="Torreon" value="Torreon" />
+                        <Picker.Item label="Irapuato" value="Irapuato" />
+                        <Picker.Item label="Queretaro" value="Queretaro" />
                     </Picker>
                 </View>
 

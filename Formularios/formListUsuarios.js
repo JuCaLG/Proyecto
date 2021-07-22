@@ -72,7 +72,7 @@ export default function formListUsuarios(props, navigation) {
                 <View style={mainStyles.btnMas} >
 
                     <TouchableOpacity onPress={() => crearCategoria()}>
-                        <Text style={mainStyles.btntxt}>+</Text>
+                        <Text style={mainStyles.btntxt}>Nuevo</Text>
                     </TouchableOpacity>
                 </View>
 

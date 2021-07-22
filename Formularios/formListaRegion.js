@@ -47,34 +47,18 @@ export default function formListaRegion(props, navigation) {
 
                 <View >
 
-                    <TouchableOpacity onPress={() => DetalleLista("Region 1")}>
+                    <TouchableOpacity onPress={() => DetalleLista("Region Centro")}>
                         <Text style={mainStyles.titleLista}>Region 1</Text>
                     </TouchableOpacity>
                 </View>
 
                 <View >
 
-                    <TouchableOpacity onPress={() => DetalleLista("Region 2")}>
+                    <TouchableOpacity onPress={() => DetalleLista("Region Norte")}>
                         <Text style={mainStyles.titleLista}>Region 2</Text>
                     </TouchableOpacity>
                 </View>
-                <View >
-
-                    <TouchableOpacity onPress={() => DetalleLista("Region 3")}>
-                        <Text style={mainStyles.titleLista}>Region 3 </Text>
-                    </TouchableOpacity>
-                </View>
-                <View >
-                    <TouchableOpacity onPress={() => DetalleLista("Region 4")}>
-                        <Text style={mainStyles.titleLista}>Region 4</Text>
-                    </TouchableOpacity>
-                </View>
-                <View >
-                    <TouchableOpacity onPress={() => DetalleLista("Region 5")}>
-                        <Text style={mainStyles.titleLista}>Region 5 </Text>
-                    </TouchableOpacity>
-                </View>
-               
+              
                 <View style={mainStyles.btnMain}>
 
                     <TouchableOpacity onPress={() => cerrarLista()}>

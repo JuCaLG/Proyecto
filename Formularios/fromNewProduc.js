@@ -1,43 +1,45 @@
 import React, { useState } from 'react'
 import { Text, View, TouchableOpacity, StatusBar, ScrollView, Image } from 'react-native'
-import { mainStyles, loginStyles, } from '@styles/styles'
+import { mainStyles, loginStyles } from '@styles/styles'
 import MyTextInput from '@components/MyTextInput'
 import color from '@styles/colors'
 import { Picker } from '@react-native-community/picker';
 
 
-const crearNewProductto = ()=>{
+export default function fromNewProduc(props) {
 
-    
+  const [categoria, setCategoria] = useState('')
+  const [inputCategoria, guardarCategoria] = useState('')
 
+  const [selectedValue1, setSelectedValue1] = useState("--- Asignar rol ---")
+  const [selectedValue, setSelectedValue] = useState("--- Asignar rol ---")
+
+
+
+  const crearNewProductto = () => {}
+
+
+/*
   //Validar
-  if(inputNombre =='' || inputRFC =='' || inputDireccion=='' || inputTelefono=='' || inputEmail =='' ){
-      alert("Todos los campos son necesarios")
-  }else{
-      alert("Proveedor registrado")
-      guardarCategoria('')
+  if (inputNombre == '' || inputRFC == '' || inputDireccion == '' || inputTelefono == '' || inputEmail == '') {
+    alert("Todos los campos son necesarios")
+  } else {
+    alert("Proveedor registrado")
+    guardarCategoria('')
   }
   //UseMutation
   //const[] = useMutation();
   //this.props.navigation.navigate('Principal');
-
 }
+*/
 
-const cerrarProducto =(props,navigation) => {
+const cerrarProducto = () => {
   props.navigation.navigate('Home')
 
 }
 
-function goToScreen(props, routeName) {
-  props.navigation.navigate(routeName)
-}
 
-export default function formProvedores(props) {
 
-  const [categoria, setCategoria] = useState('')
-  const[inputCategoria,guardarCategoria]= useState('')
-
-  
   return (
     <ScrollView
       keyboardDismissMode='on-drag'
@@ -50,24 +52,30 @@ export default function formProvedores(props) {
 
         <View>
           <Text style={{ fontWeight: 'bold', fontSize: 18, marginTop: 20 }}>Categoria</Text>
-          <Picker>
-            <Picker.Item label="---Seleccione una categoria---" value="" />
-            <Picker.Item label="Cable" value="" />
-            <Picker.Item label="Conector" value="" />
-            <Picker.Item label="Enchufe" value="" />
-            <Picker.Item label="Apagador" value="" />
-
+          <Picker
+            selectedValue={selectedValue1}
+            style={{ height: 50, width: 300 }}
+            onValueChange={(itemValue1, itemIndex1) => setSelectedValue1(itemValue1)}
+          >
+            <Picker.Item label="Electrónica " value="Electrónica" />
+            <Picker.Item label="Ferretería" value="Ferretería" />
+            <Picker.Item label="Agricultura" value="Agricultura" />
+            <Picker.Item label="Textiles" value="Textiles" />
           </Picker>
         </View>
+
+
+
+
         <View>
           <Text style={{ fontWeight: 'bold', fontSize: 18, marginTop: 20 }}>Provedor</Text>
-          <Picker>
-            <Picker.Item label="---Seleccione una Provedor---" value="" />
-            <Picker.Item label="Telmex" value="" />
-            <Picker.Item label="Megacable" value="" />
-            <Picker.Item label="React-Native" value="" />
-            <Picker.Item label="Carredana" value="" />
-
+          <Picker
+            selectedValue={selectedValue}
+            style={{ height: 50, width: 300 }}
+            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+          >
+            <Picker.Item label="Proveedor P1" value="Proveedor P1" />
+            
           </Picker>
         </View>
         <Text style={{ fontWeight: 'bold', fontSize: 18, marginTop: 20 }}>QR</Text>
@@ -76,21 +84,22 @@ export default function formProvedores(props) {
         </View>
 
         <MyTextInput placeholder='Nombre' image='user' />
-        <MyTextInput placeholder='Descripción' image='MinusOutlined' />
-        <MyTextInput placeholder='Stock de inicial' image='totope' />
+        <MyTextInput placeholder='Color'  />
+        <MyTextInput placeholder='Descripción'/>
+        <MyTextInput placeholder='Stock inicial'  />
         <MyTextInput placeholder='Precio de compra' image='phone' />
         <MyTextInput placeholder='Precio de venta' image='envelope' />
 
 
 
         <View style={mainStyles.btnMain}>
-          <TouchableOpacity onPress= {()=> crearNewProductto()} >
+          <TouchableOpacity onPress={() => crearNewProductto()} >
             <Text style={mainStyles.btntxt}>Agregar</Text>
           </TouchableOpacity>
         </View>
 
         <View style={mainStyles.btnMain}>
-          <TouchableOpacity  onPress={() => cerrarProducto()}>
+          <TouchableOpacity onPress={() => cerrarProducto()}>
             <Text style={mainStyles.btntxt}>Cancelar</Text>
           </TouchableOpacity>
         </View>
